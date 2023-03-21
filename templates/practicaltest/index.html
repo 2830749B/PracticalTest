@@ -12,7 +12,7 @@
         </style>
     </head>
 <body>
-        <h1 style="text-align: center;">School News</h1>
+        <h1>School News</h1>
         <h2>Weather Warning</h2>
         <i>by Allen White. 20/03/2023</i>
         <p>According to the weather forecast, there will be heavy snow tomorrow which might cause some disruptions for the transportation</p>
@@ -21,14 +21,16 @@
         <p>This year, we will all go back to in-person teaching.</p>
 
         <div>
-            {% if list %}
+          {% if list %}
             {% for Page in list %}
             <h2> {{Page.title}} </h2>
-            <p><i>by {{Page.author}}, &emsp; {{Page.date}} </i></p>
+            <p><i>created by {{Page.author}}, &emsp; {{Page.date}} </i></p>
+            <p>{{news.description}}</p><br><br>
             {% endfor %}
             (% else %}
-            <strong>No news today.</strong>
+            <strong> No news available today.</strong>
             {% endif %}
+
         </div>
     </body>
 </html>
